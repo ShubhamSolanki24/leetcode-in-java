@@ -1,12 +1,12 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        //brute force
+        //brute force of O(N^2) solution
         //for i =0 to n
         //for j =i+1 to n
         //if(target == nums[i] +nums[j])
          // return i ,j;         
         
-        // O(n) solution 
+        //Now O(n) solution 
         
         HashMap<Integer,Integer> hm = new HashMap();
     // put array items in hashmap
@@ -26,6 +26,7 @@ class Solution {
         }
         
         return new int[]{};
-       
+       // Time Complexity O(N)
+       //Space Complexity O(N)
     }
 }
