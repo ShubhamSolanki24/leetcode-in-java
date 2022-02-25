@@ -5,7 +5,7 @@ class Solution {
         int m=matrix[0].length;
         int low=0,high=n*m-1;
         while(low<=high){
-            int mid=(low+high)>>1;
+            int mid=(low+high)/2;
             int r=mid/m;
             int c=mid%m;
             if(matrix[r][c]==target){
