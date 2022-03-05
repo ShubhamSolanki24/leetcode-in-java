@@ -14,4 +14,4 @@ class Solution {
     }
 }
 //TC O(len(s+t))
-//SC )(1)
+//SC O(1)
