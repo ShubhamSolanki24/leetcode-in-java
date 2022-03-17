@@ -4,7 +4,8 @@ class Solution {
    
     int ans =0;
      while(i<s.length()){
-         char first = s.charAt(i);i++;
+         char first = s.charAt(i);
+         i++;
         if(first =='('){
            
             if(s.charAt(i) ==')'){
