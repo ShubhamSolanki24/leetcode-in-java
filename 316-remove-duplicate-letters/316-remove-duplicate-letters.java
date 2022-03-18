@@ -11,7 +11,7 @@ class Solution {
         for(char ch:s.toCharArray()){
             freq[ch-'a']--;
             
-            if(isAdded[ch-'a'])continue;
+            if(isAdded[ch-'a'] == true )continue;
             
             while(!res.isEmpty() && res.getLast()>ch && freq[res.getLast()-'a']>0){
                 isAdded[res.removeLast() -'a'] =false;
