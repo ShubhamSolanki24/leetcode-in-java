@@ -18,23 +18,22 @@ class Node {
 */
 
 class Solution {
-    public List<Integer> postorder(Node root) {
-         LinkedList<Node> stack = new LinkedList<>();
-        LinkedList<Integer> optarr = new LinkedList<>();
-        
-        if(root ==null){
-            return optarr;
-        }
-        
-        stack.add(root);
-        while(!stack.isEmpty()){
-            Node node = stack.pollLast();
-            optarr.addFirst(node.val);
-            for(Node child: node.children){
-                stack.add(child);
-            }
-        }
-        return optarr;
-        
-    }
+public List<Integer> postorder(Node root) {
+    if(root==null)
+    return new ArrayList<Integer>();
+    
+List<Integer> ans = new ArrayList<>();
+Deque<Node> stack = new ArrayDeque<>();
+stack.push(root);
+
+while (!stack.isEmpty()) {
+  root = stack.pop();
+  ans.add(root.val);
+  for (Node child : root.children)
+    stack.push(child);
 }
+
+Collections.reverse(ans);
+return ans;  
+    
+}}
