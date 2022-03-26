@@ -27,11 +27,10 @@ class Solution {
         
         st.add(root);
         while(!st.isEmpty()){
-            Node node = st.pollLast();
-            optarr.add(node.val);
-            Collections.reverse(node.children);
-            for(Node child: node.children){
-                st.add(child);
+            Node curr = st.pop();
+            optarr.add(curr.val);
+            for(int i = curr.children.size() -1;i>=0;i--){
+                st.push(curr.children.get(i));
             }
             
         }
