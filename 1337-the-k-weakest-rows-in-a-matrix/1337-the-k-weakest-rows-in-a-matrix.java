@@ -1,19 +1,23 @@
 class Solution {
     public int[] kWeakestRows(int[][] mat, int k) {
-        PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> a[0] != b[0] ? a[0] - b[0] : a[1] - b[1]);
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0]!= b[0] ? b[0] - a[0] : b[1] - a[1]);
         int pos=0;
-        for (int[] row : mat){
-            int low = 0, high = row.length; 
-            while(low < high){
-                int mid = (low + high) / 2;
-                if (row[mid] != 0) low = mid + 1;
-                else high = mid;
-            }
-            queue.add(new int[]{low, pos++});
-        }
+       int[] res = new int[k];
         
-        int[] output = new int[k];
-        for(int i = 0; i < k; i++)  output[i] = queue.remove()[1];
-        return output;
+        for(int i =0;i<mat.length;i++){
+            int soldiers =0;
+            for(int j =0;j<mat[0].length;j++){
+                if(mat[i][j] ==1)soldiers++;
+                else break;
+            }
+            pq.offer(new int[]{soldiers,i});
+        }
+        while(pq.size()>k){
+            pq.poll();
+        }
+        while(k>0) 
+            res[--k]= pq.poll()[1];
+        
+        return res;    
     }
 }
