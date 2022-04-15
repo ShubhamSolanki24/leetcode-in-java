@@ -16,8 +16,7 @@ class Solution {
         }
         return end-start +1;
         */
-        //Approach 2
-        
+        //Approach 2 TC- O(N) sc-O(1)       
         int min =Integer.MAX_VALUE,max= Integer.MIN_VALUE;
         int n = nums.length;
         for(int i =1;i<n;i++){ 
@@ -40,6 +39,6 @@ class Solution {
             if(nums[end]<max) break;
         }
         return end - start+1;
-        
+    
     }
 }
