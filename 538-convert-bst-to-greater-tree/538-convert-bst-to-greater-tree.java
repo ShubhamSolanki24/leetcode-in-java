@@ -14,17 +14,36 @@
  * }
  */
 class Solution {
-          int sum=0;
+    //Approach 1
+    
+    int sum=0;
     public TreeNode convertBST(TreeNode root) {
         if(root== null)return null;
   
-        convertBST(root.right);
+      /*  convertBST(root.right);
         //root
-        
-         sum+= root.val; 
+        sum+= root.val; 
         root.val = sum;
+       
         convertBST(root.left);
         
+        return root;
+       */ 
+        //Approach 2
+        
+        TreeNode node = root;
+        Stack<TreeNode> st = new Stack<>();
+        
+        while(!st.isEmpty() || node!= null){
+            while(node!= null){
+                st.add(node);
+                node = node.right;
+            }
+          node = st.pop();
+            sum+=node.val;
+            node.val = sum;
+            node=node.left;
+        }
         return root;
     }
 }
