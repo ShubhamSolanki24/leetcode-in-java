@@ -14,10 +14,10 @@
  * }
  */
 class Solution {
-    private int count;
-    private int res;
+     int count;
+     int res;
     public int kthSmallest(TreeNode root, int k) {
-      count =k;
+       count =k;
         kthSmallestUtil(root);
         return res;
     }
