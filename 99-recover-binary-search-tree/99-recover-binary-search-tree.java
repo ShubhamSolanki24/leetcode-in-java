@@ -37,6 +37,6 @@ class Solution {
           second  =root;
        }
        prev =root; 
-      inorder(root.right);   
+       inorder(root.right);   
    } 
 }
