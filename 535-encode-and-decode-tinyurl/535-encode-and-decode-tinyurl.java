@@ -1,5 +1,5 @@
 public class Codec {
-
+/*
     HashMap<String,String> map= new HashMap<>();
     
     // Encodes a URL to a shortened URL.
@@ -17,7 +17,14 @@ public class Codec {
     // Decodes a shortened URL to its original URL.
     public String decode(String shortUrl) {
         return map.get(shortUrl);
+    }*/
+    public String encode(String longUrl) {
+        return longUrl;
     }
+     public String decode(String shortUrl) {
+        return shortUrl;
+    }
+    
 }
 
 // Your Codec object will be instantiated and called as such:
