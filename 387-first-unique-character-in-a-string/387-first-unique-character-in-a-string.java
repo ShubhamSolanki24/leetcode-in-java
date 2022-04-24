@@ -1,20 +1,14 @@
 class Solution {
     public int firstUniqChar(String s) {
-       HashMap<Character ,Integer> map = new HashMap<>();
+      Map<Character,Integer> map=new HashMap<>();
         for(int i=0;i<s.length();i++){
-            char curr = s.charAt(i);
-            if(!map.containsKey(curr)){
-                map.put(curr,i);
-            }else{
-                map.put(curr,-1);
+                map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
+        }
+        for(int i=0;i<s.length();i++){
+            if(map.get(s.charAt(i))==1){
+                return i;
             }
         }
-        int min = Integer.MAX_VALUE;
-        for(char c: map.keySet()){
-            if(map.get(c)>-1 && map.get(c)<min){
-                min = map.get(c);
-            }
-        }
-        return min == Integer.MAX_VALUE? -1: min;
+        return -1;
     }
 }
