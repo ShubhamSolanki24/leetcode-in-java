@@ -1,6 +1,6 @@
 class Solution {
 public:
-       double dfs(string a,string&b,unordered_map<string,unordered_map<string,double>>graph,unordered_set<string>&visited)
+       double dfs(string a,string b,unordered_map<string,unordered_map<string,double>>graph,unordered_set<string>&visited)
     {
         
     if(graph[a].find(b)!=graph[a].end())
