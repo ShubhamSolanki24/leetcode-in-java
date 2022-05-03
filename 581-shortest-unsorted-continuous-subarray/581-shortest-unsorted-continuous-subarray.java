@@ -38,7 +38,7 @@ class Solution {
         for(;end>=0 ;end--){
             if(nums[end]<max) break;
         }
-        return end - start+1;
+        return end-start+1;
     
     }
 }
