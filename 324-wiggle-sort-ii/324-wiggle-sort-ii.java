@@ -25,7 +25,6 @@ class Solution {
     }   */
        int[] counts = new int[5001];
         for (int num: nums) counts[num]++;
-        int index = 1;
         int last = counts.length - 1;
 
         for (int i = 1; i < nums.length; i += 2) {
@@ -45,10 +44,7 @@ class Solution {
             nums[i] = last;
             counts[last]--;
         }  
-        
-        
-        
-        
+   
         
      }
 }
