@@ -9,6 +9,7 @@ class Solution {
         map.put('D',500);
         map.put('M',1000);
         
+      // if(last element is smaller reduce sum value else increase value)
         int sum = map.get(str.charAt(str.length()-1));
         for(int i=str.length()-2;i>=0;i--){
             if(map.get(str.charAt(i)) >= map.get(str.charAt(i+1)) ){
