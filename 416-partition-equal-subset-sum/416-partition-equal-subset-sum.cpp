@@ -1,5 +1,6 @@
 class Solution {
 public:
+    int8_t dp[10001] = {[0 ... 10000] = -1};
     bool canPartition(vector<int>& nums) {
          int n = nums.size();
         int sum =0;
@@ -9,27 +10,15 @@ public:
       if(sum%2 != 0){
           return false;
       }else {
-          return subsetSum(nums,sum/2,n);
+          return subsetSum(nums,sum/2);
       }
     }
     
-    bool subsetSum(vector<int>& arr, int sum, int n){
-    int dp[n+1][sum+1];
-    for(int i = 0; i < sum+1; i++)
-        dp[0][i] = false;
-    for(int i = 0; i < n+1; i++)
-        dp[i][0] = true;
-
-    for(int i = 1; i < n+1; i++)
-    {
-        for(int j = 1; j < sum+1; j++)
-        {
-            if(arr[i-1] <= j)
-                dp[i][j] = dp[i-1][j-arr[i-1]] || dp[i-1][j];
-            else
-                dp[i][j] = dp[i-1][j];
-        }
-    }
-    return dp[n][sum];
+    bool subsetSum(vector<int>& nums, int sum, int i =0){
+    
+        if(sum == 0) return true;
+        if(i >= size(nums) || sum < 0) return false; 
+        if(dp[sum] != -1) return dp[sum];
+        return dp[sum] = subsetSum(nums, sum - nums[i], i + 1) || subsetSum(nums, sum, i + 1);
     }
 };
