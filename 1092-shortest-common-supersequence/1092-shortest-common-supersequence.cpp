@@ -3,7 +3,7 @@ public:
     string shortestCommonSupersequence(string s1, string s2) {
      int n=s1.size();
         int m=s2.size();
-        vector<vector<int>> dp(n+1,vector<int>(m+1));
+     int  dp[n+1][m+1];
         for(int i=0;i<=n;i++)
             dp[i][0]=0;
         for(int i=0;i<=m;i++)
